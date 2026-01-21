@@ -1,0 +1,152 @@
+/* Base */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Utilitaires */
+.clearfix {
+  &::before {
+    content: "";
+    display: table;
+  }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.vertically-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container {
+  max-width: 1170px;
+  margin-inline: auto;
+}
+
+/* Header */
+body > header {
+  background-color: #0099ee;
+  position: relative;
+  padding-block: 10px;
+  .logo-link {
+    float: left;
+    line-height: 0;
+    svg {
+      width: 140px;
+      height: auto;
+    }
+  }
+  nav {
+    float: right;
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-block: 0;
+    }
+    li {
+      float: left;
+      &:last-child {
+        a {
+          padding-right: 0;
+        }
+      }
+    }
+    a {
+      display: block;
+      padding: 16px;
+    }
+  }
+}
+
+/* Section1 */
+
+.section1 {
+  height: 640px;
+  background-color: #0078bb;
+  padding-bottom: 20px;
+  .container {
+    position: relative;
+    height: 100%;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.section2 {
+  background-color: #008cda;
+  h2 {
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    float: left;
+    width: 25%;
+  }
+  article {
+    text-align: center;
+  }
+}
+
+.section3 {
+  background-color: #006ba6;
+  h2 {
+    text-align: center;
+  }
+  .container > ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-inline: auto;
+    width: 70%;
+    & > li {
+      float: left;
+      width: 48%;
+      &:first-child {
+        margin-right: 4%;
+      }
+    }
+  }
+  footer {
+    text-align: center;
+  }
+}
+
+main + footer {
+  .container {
+    position: relative;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    float: left;
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+  }
+  a {
+    display: block;
+    padding: 16px;
+  }
+  small {
+    right: 0;
+  }
+}
