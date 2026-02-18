@@ -6,6 +6,14 @@
     <title>Spotify</title>
     <link rel="stylesheet" href="main.css" />
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("menu-btn");
+        btn.addEventListener("click", function () {
+          const nav = document.getElementById("main-nav");
+          nav.classList.toggle("visible");
+        });
+      });
+
       window.addEventListener("scroll", function () {
         const header = document.getElementById("site-header");
         if (window.scrollY !== 0) {
@@ -81,7 +89,7 @@
             />
           </svg>
         </a>
-        <nav>
+        <nav id="main-nav">
           <ul>
             <li>
               <a href="#">Premium</a>
@@ -103,6 +111,21 @@
             </li>
           </ul>
         </nav>
+        <button id="menu-btn" class="menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -110,7 +133,7 @@
       <section class="section1">
         <div class="container">
           <div>
-            <h1>Obtenez 3 mois pour 0,99 €</h1>
+            <h1>Obtenez 3 mois pour 0,99&nbsp;€</h1>
             <h2>Seulement 9,99 € /par mois ensuite. Annulez à tout moment.</h2>
             <a href="#" class="button">Démarrer Spotify Premium</a>
           </div>
@@ -125,7 +148,7 @@
       </section>
       <section class="section2">
         <div class="container">
-          <h2>Pourquoi passer à Spotify premium ?</h2>
+          <h2>Pourquoi passer à Spotify premium&nbsp;?</h2>
           <ul>
             <li>
               <article>

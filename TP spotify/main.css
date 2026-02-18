@@ -135,6 +135,7 @@ h4 {
 /* Header */
 body > header {
   position: fixed;
+  z-index: 10;
   background-color: transparent;
   width: 100%;
   color: var(--white);
@@ -154,6 +155,8 @@ body > header {
   }
   .logo-link {
     line-height: 0;
+    position: relative;
+    z-index: 5;
     svg {
       width: 140px;
       height: auto;
@@ -176,6 +179,16 @@ body > header {
     a {
       display: block;
       padding: 16px;
+    }
+  }
+  .menu-btn {
+    all: unset;
+    display: none;
+    position: relative;
+    z-index: 5;
+    svg {
+      height: 2rem;
+      width: auto;
     }
   }
 }
@@ -314,9 +327,51 @@ main + footer {
 /* styles mobiles */
 
 @media (width < 1024px) {
-  body > header {
-    display: none;
+  .container {
+    margin-inline: 1.5rem;
   }
+
+  body > header {
+    nav {
+      position: fixed;
+      inset: 0;
+      background-color: var(--blue);
+      transform: translateX(100%);
+      transition: transform 0.5s;
+      &.visible {
+        transform: translateX(0%);
+      }
+      ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+    .menu-btn {
+      display: flex;
+    }
+  }
+
+  .section1 {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: color-mix(in srgb, var(--black) 40%, transparent);
+    }
+    .container {
+      position: relative;
+    }
+    h1 {
+      font-size: 2.75rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+
   .section2 {
     ul {
       flex-direction: column;
@@ -331,6 +386,7 @@ main + footer {
       & > ul {
         flex-direction: column;
         width: 100%;
+        gap: 2rem;
         & > li {
           width: 100%;
         }

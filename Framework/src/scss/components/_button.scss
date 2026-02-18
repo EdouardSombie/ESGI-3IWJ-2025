@@ -1,0 +1,29 @@
+@use "../partials/functions" as f;
+
+.button {
+  // styles de base (padding, border, typo...)
+  padding: f.rem(10) f.rem(16);
+  // de base : fond de couleur noire
+
+  // modifiers de couleur (référence aux var css)
+
+  &--primary {
+    //
+  }
+
+  &--secondary {
+    //
+  }
+
+  &--danger {
+    //
+  }
+
+  // modifiers de taille
+
+  &--sm {
+  }
+
+  &--lg {
+  }
+}
