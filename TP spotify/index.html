@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
     <link rel="stylesheet" href="main.css" />
+    <script>
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("site-header");
+        if (window.scrollY !== 0) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      });
+    </script>
   </head>
   <body>
-    <header>
+    <header id="site-header">
       <div class="container">
         <a href="#" class="logo-link">
           <svg
@@ -153,7 +163,7 @@
           <h2>Écoutez gratuitement ou abonnez-vous à Spotify Premium.</h2>
           <ul>
             <li>
-              <article>
+              <article class="card">
                 <h3>Spotify Free</h3>
                 <h4>0,00 € <small>/ mois</small></h4>
                 <ul>
@@ -168,7 +178,7 @@
               </article>
             </li>
             <li>
-              <article>
+              <article class="card">
                 <h3>Spotify Premium</h3>
                 <h4>3 mois pour 0,99 €</h4>
                 <ul>

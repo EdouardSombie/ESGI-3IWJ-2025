@@ -54,6 +54,7 @@ h4 {
   border-radius: 9999px;
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
   font-weight: 700;
   letter-spacing: 0.05em;
   transition: all 0.3s;
@@ -87,6 +88,50 @@ h4 {
   }
 }
 
+/* composant card */
+.card {
+  position: relative;
+  top: 0;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: 0 0 1rem color-mix(in srgb, var(--black) 30%, transparent);
+  transition: all 0.5s;
+  &:hover {
+    top: -1rem;
+    box-shadow: 0 0 2rem color-mix(in srgb, var(--black) 20%, transparent);
+  }
+  h3 {
+    font-weight: 400;
+    margin-block: 0;
+    font-size: 1.5rem;
+  }
+  h4 {
+    margin-block: 0;
+    font-size: 2rem;
+    small {
+      font-weight: 400;
+      font-size: 60%;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-block: solid thin var(--grey);
+    margin-block: 1rem;
+    padding-block: 1.5rem;
+    list-style-image: url("images/checklist.svg");
+    padding-inline-start: 1.25rem;
+    li {
+      padding-inline-start: 0.5rem;
+    }
+  }
+}
+
 /* Header */
 body > header {
   position: fixed;
@@ -94,6 +139,10 @@ body > header {
   width: 100%;
   color: var(--white);
   padding-block: 10px;
+  transition: all 1s;
+  &.sticky {
+    background-color: color-mix(in srgb, var(--black) 50%, transparent);
+  }
   a {
     color: currentColor;
     text-decoration: none;
@@ -172,6 +221,7 @@ body > header {
 .section2 {
   background-color: var(--white);
   color: var(--black);
+  padding-block: 1rem;
   .container {
     display: flex;
     flex-direction: column;
@@ -202,7 +252,7 @@ body > header {
 
 .section3 {
   background-color: var(--light-grey);
-  padding-bottom: 20px;
+  padding-block: 2rem;
   h2 {
     font-size: 1.875rem;
     text-align: center;
@@ -216,19 +266,15 @@ body > header {
       list-style-type: none;
       padding-left: 0;
       margin-inline: auto;
+      margin-block: 2rem;
       width: 70%;
       & > li {
         width: 48%;
       }
     }
   }
-  article {
-    h3 {
-      font-size: 1.5rem;
-    }
-    h4 {
-      font-size: 2rem;
-    }
+  .card {
+    height: 100%;
   }
   footer {
     text-align: center;
@@ -237,6 +283,8 @@ body > header {
 
 main + footer {
   font-size: 0.875rem;
+  background-color: var(--black);
+  color: var(--white);
   .container {
     display: flex;
     justify-content: space-between;
@@ -258,5 +306,35 @@ main + footer {
   a {
     display: block;
     padding: 16px;
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+/* styles mobiles */
+
+@media (width < 1024px) {
+  body > header {
+    display: none;
+  }
+  .section2 {
+    ul {
+      flex-direction: column;
+    }
+    li {
+      width: 100%;
+    }
+  }
+
+  .section3 {
+    .container {
+      & > ul {
+        flex-direction: column;
+        width: 100%;
+        & > li {
+          width: 100%;
+        }
+      }
+    }
   }
 }
