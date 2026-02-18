@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 /* Base */
 
 * {
@@ -22,15 +33,71 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+}
+
 .container {
   max-width: 1170px;
   margin-inline: auto;
 }
 
+/* composant button */
+.button {
+  background-color: var(--blue);
+  color: var(--white);
+  display: inline-block;
+  padding: 1em 3em;
+  border-radius: 9999px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  border: solid thin var(--blue);
+  &:hover {
+    background-color: var(--light-blue);
+    border-color: var(--light-blue);
+  }
+}
+
+/* modifier de composant */
+.button--white {
+  background-color: var(--white);
+  color: var(--green);
+  border-color: var(--green);
+  &:hover {
+    background-color: var(--light-green);
+    border-color: var(--light-green);
+    color: var(--white);
+  }
+}
+
+.button--green {
+  background-color: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+  &:hover {
+    background-color: var(--light-green);
+    border-color: var(--light-green);
+    color: var(--white);
+  }
+}
+
 /* Header */
 body > header {
-  background-color: #0099ee;
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  color: var(--white);
   padding-block: 10px;
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -68,7 +135,11 @@ body > header {
 
 .section1 {
   height: 640px;
-  background-color: #0078bb;
+  color: var(--white);
+  background-image: url("images/hero-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
   padding-bottom: 20px;
   .container {
     height: 100%;
@@ -82,6 +153,16 @@ body > header {
       align-items: flex-start;
     }
   }
+  h1 {
+    font-size: 6rem;
+    margin-block: 0;
+  }
+  h2 {
+    font-size: 1.875rem;
+  }
+  .button {
+    animation: fadeUp 1s;
+  }
   footer {
     text-align: center;
     flex-shrink: 0;
@@ -89,12 +170,14 @@ body > header {
 }
 
 .section2 {
-  background-color: #008cda;
+  background-color: var(--white);
+  color: var(--black);
   .container {
     display: flex;
     flex-direction: column;
   }
   h2 {
+    font-size: 3rem;
     text-align: center;
   }
   ul {
@@ -107,13 +190,21 @@ body > header {
   }
   article {
     text-align: center;
+    h3 {
+      font-size: 1.25rem;
+    }
+    h4 {
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
   }
 }
 
 .section3 {
-  background-color: #006ba6;
+  background-color: var(--light-grey);
   padding-bottom: 20px;
   h2 {
+    font-size: 1.875rem;
     text-align: center;
   }
   .container {
@@ -131,12 +222,21 @@ body > header {
       }
     }
   }
+  article {
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 2rem;
+    }
+  }
   footer {
     text-align: center;
   }
 }
 
 main + footer {
+  font-size: 0.875rem;
   .container {
     display: flex;
     justify-content: space-between;
