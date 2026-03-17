@@ -1,0 +1,30 @@
+@use "../partials/functions" as f;
+
+.card {
+  width: f.rem(320);
+  border-radius: f.rem(6);
+  border: solid thin var(--light-grey);
+  overflow: hidden;
+  --padding: #{f.rem(20)};
+  padding: var(--padding);
+  &__image {
+    width: calc(100% + 2 * var(--padding));
+    aspect-ratio: 320/200;
+    object-fit: cover;
+    object-position: center;
+    margin-top: calc(var(--padding) * -1);
+    margin-inline: calc(var(--padding) * -1);
+    margin-bottom: var(--padding);
+  }
+  &__title {
+    font-size: f.rem(20);
+    line-height: 1;
+    font-weight: 500;
+    margin-block: 0 calc(var(--padding) / 2);
+  }
+  &__text {
+    margin-block: 0 calc(var(--padding) / 2);
+    font-size: f.rem(16);
+    line-height: f.rem(24);
+  }
+}

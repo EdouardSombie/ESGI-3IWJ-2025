@@ -26,23 +26,23 @@
   // modifiers de couleur (référence aux var css)
 
   &--primary {
-    background-color: var(--blue);
+    background-color: var(--primary);
     &:hover {
-      background-color: var(--blue-hover);
+      background-color: var(--primary-hover);
     }
   }
 
   &--secondary {
-    background-color: var(--grey);
+    background-color: var(--secondary);
     &:hover {
-      background-color: var(--grey-hover);
+      background-color: var(--secondary-hover);
     }
   }
 
   &--danger {
-    background-color: var(--red);
+    background-color: var(--danger);
     &:hover {
-      background-color: var(--red-hover);
+      background-color: var(--danger-hover);
     }
   }
 
