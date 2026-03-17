@@ -1,49 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-:root {
-  --red: #dc3545;
-  --red-hover: rgb(227, 93.4, 106.2);
-  --grey: #6c757d;
-  --grey-hover: rgb(136.1158798283, 144.6755364807, 152.2841201717);
-  --blue: #0d6efd;
-  --blue-hover: rgb(61.4, 139, 253.4);
-}
+/* Error: ("light": "black", "dark": "white") isn't a valid CSS value.
+ *    ,
+ * 13 |     --#{$name}: var(--#{$color});
+ *    |                         ^^^^^^
+ *    '
+ *   src/scss/partials/_globals.scss 13:25  @use
+ *   src/scss/main.scss 3:1                 root stylesheet */
 
-body {
-  font-family: "Inter", sans-serif;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: (\"light\": \"black\", \"dark\": \"white\") isn't a valid CSS value.\a    \2577 \a 13 \2502      --#{$name}: var(--#{$color});\a    \2502                          ^^^^^^\a    \2575 \a   src/scss/partials/_globals.scss 13:25  @use\a   src/scss/main.scss 3:1                 root stylesheet";
 }
-
-.container {
-  margin-inline: 1.5rem;
-}
-@media (width > 576px) {
-  .container {
-    margin-inline: auto;
-    max-width: calc(576px - 4rem);
-  }
-}
-@media (width > 768px) {
-  .container {
-    max-width: calc(768px - 4rem);
-  }
-}
-@media (width > 992px) {
-  .container {
-    max-width: calc(992px - 4rem);
-  }
-}
-@media (width > 1200px) {
-  .container {
-    max-width: calc(1200px - 4rem);
-  }
-}
-@media (width > 1400px) {
-  .container {
-    max-width: calc(1400px - 4rem);
-  }
-}
-
-.button {
-  padding: 0.625rem 1rem;
-}
-
-/*# sourceMappingURL=main.css.map */

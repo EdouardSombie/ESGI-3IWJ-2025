@@ -7,8 +7,18 @@
     --#{$name}: #{$value};
     --#{$name}-hover: #{color.scale($value, $lightness: 20%)};
   }
+  @each $name, $color in v.$agnostic {
+    // ne marche pas si la $color n'est pas de type string !
+    // si la $color est de type string :
+    --#{$name}: var(--#{$color});
+
+    // sinon on utilise la valeur associée à la clé light
+
+    // ajouter une media query pour le dark mode : y redefinir les variables --body-text et --body-bg
+  }
 }
 
 body {
   font-family: fonts.$mainFont;
+  // appliquer les couleurs agnostiques du body
 }

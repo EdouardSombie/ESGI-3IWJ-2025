@@ -1,29 +1,60 @@
 @use "../partials/functions" as f;
+@use "../partials/mixins" as m;
 
 .button {
+  // reset les styles par défaut
+  @include m.resetAll;
+
   // styles de base (padding, border, typo...)
+  display: inline-block;
   padding: f.rem(10) f.rem(16);
   // de base : fond de couleur noire
+  background-color: var(--black);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: f.rem(18);
+
+  border-radius: f.rem(6);
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--black-hover);
+  }
 
   // modifiers de couleur (référence aux var css)
 
   &--primary {
-    //
+    background-color: var(--blue);
+    &:hover {
+      background-color: var(--blue-hover);
+    }
   }
 
   &--secondary {
-    //
+    background-color: var(--grey);
+    &:hover {
+      background-color: var(--grey-hover);
+    }
   }
 
   &--danger {
-    //
+    background-color: var(--red);
+    &:hover {
+      background-color: var(--red-hover);
+    }
   }
 
   // modifiers de taille
 
   &--sm {
+    padding: f.rem(8) f.rem(12);
+    font-size: f.rem(14);
+    line-height: f.rem(16);
   }
 
   &--lg {
+    padding: f.rem(16) f.rem(24);
   }
 }
