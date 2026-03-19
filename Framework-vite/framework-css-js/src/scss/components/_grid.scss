@@ -1,0 +1,35 @@
+@use "../partials/variables" as v;
+
+@layer components {
+  .grid {
+    $colNb: 12;
+    $gap: 2rem;
+    // 12 colonnes, séparée par un gap de 2rem ($gap)
+    display: grid;
+    grid-template-columns: repeat($colNb, 1fr);
+    column-gap: $gap;
+
+    // par défaut, tous les éléments ayant une classe col- occupent toute la grille
+    [class^="col-"] {
+      grid-column: 1 / -1;
+    }
+
+    // Définition des classes col-1 à col-12
+    @for $i from 1 through $colNb {
+      .col-#{$i} {
+        grid-column: span $i;
+      }
+    }
+
+    // Idem pour les classes col-sm-1... (utiliser la map $breakpoints)
+    @each $infix, $size in v.$breakpoints {
+      @media (width > $size) {
+        @for $i from 1 through $colNb {
+          .col-#{$infix}-#{$i} {
+            grid-column: span $i;
+          }
+        }
+      }
+    }
+  }
+}
